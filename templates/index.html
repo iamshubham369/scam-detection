@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scam Website Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scam Website Detector</h1>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter URL here..." required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+    <p class="result">{{ result }}</p>
+    {% endif %}
+</body>
+</html>
